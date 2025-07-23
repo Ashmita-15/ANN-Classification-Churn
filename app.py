@@ -48,7 +48,8 @@ input_data=pd.DataFrame({
 
 ##onehot encoding geography column
 geo_encoded=onehot_encoder_geo.transform([[geography]])
-geo_encoded_df=pd.DataFrame(geo_encoded,columns=onehot_encoder_geo.get_feature_names_out(['Geography']))
+geo_encoded_df = pd.DataFrame(geo_encoded, columns=["Geography_France", "Geography_Germany", "Geography_Spain"])
+
 
 input_data=pd.concat([input_data.reset_index(drop=True),geo_encoded_df],axis=1)
 
